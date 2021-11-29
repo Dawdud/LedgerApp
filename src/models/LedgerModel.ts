@@ -1,4 +1,5 @@
 export interface LedgerModel {
+  lp: number;
   additional: string;
   additional_spendings: string;
   adress: string;
@@ -7,7 +8,7 @@ export interface LedgerModel {
   description: string;
   development_cost: string;
   development_description: string;
-  event_date: Date;
+  event_date: string;
   fullName: string;
   id: number;
   income: string;

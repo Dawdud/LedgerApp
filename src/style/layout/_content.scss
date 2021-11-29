@@ -1,23 +1,14 @@
-@import '../utils/variables';
-.container{
-   
+@import "../utils/variables";
+.container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding-left: 150px;
-  padding-top: 100px;
-   min-height: 100vh; 
-   background-color: $primary-color;
-   
-  
-  .cont{
-      width:200px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 200px;  
-      background-color: white;
-  }
+
+  align-items: center;
+
+  padding-top: 120px;
+  padding-left: 90px;
+
+  min-height: 100vh;
+  min-width: 90vw;
+  background-color: $primary-color;
 }
