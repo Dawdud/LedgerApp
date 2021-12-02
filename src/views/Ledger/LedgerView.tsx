@@ -6,6 +6,7 @@ import { tableColumns } from "../../utils/constants/table";
 import { parse } from "date-fns";
 import { parseISO } from "date-fns/fp";
 import { format } from "date-fns/esm";
+import { Actions } from "../../components/Table/actions";
 export const LedgerView = () => {
   const [state, setstate] = useState<ILedgerTable>({ data: [], columns: [] });
 
@@ -18,11 +19,18 @@ export const LedgerView = () => {
         item.lp = index + 1;
         item.event_date = parseddata;
         item.invoice_number = item.invoice_number.substring(0, 6);
+
+        item.edit = <Actions {...item} />;
         return item;
       });
       setstate({ data: mappedData, columns: tableColumns });
     }
     getItem();
   });
-  return <Table data={state.data} columns={state.columns}></Table>;
+  return (
+    <div>
+      <button>Create</button>
+      <Table data={state.data} columns={state.columns}></Table>
+    </div>
+  );
 };

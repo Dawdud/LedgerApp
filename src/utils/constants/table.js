@@ -71,6 +71,10 @@ export const tableColumns = [
         Header: "Uwagi",
         accessor: "comments",
     },
+    {
+        Header: "edytuj/usuń",
+        accessor: "edit"
+    }
 
 
 ]

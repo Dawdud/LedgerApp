@@ -18,4 +18,5 @@ export interface LedgerModel {
   salary: string;
   summary_cost: string;
   total_income: string;
+  edit: any;
 }
