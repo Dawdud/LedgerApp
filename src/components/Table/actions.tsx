@@ -12,7 +12,7 @@ export const Actions = ({ id, fullName }: LedgerModel) => {
       >
         delete
       </button>
-      <button onClick={(e) => alert(fullName)}>edit</button>
+      <button onClick={() => {}}>edit</button>
     </div>
   );
 };

@@ -1,4 +1,4 @@
 export interface IColumns {
-  Header?: string;
-  accessor?: string;
+  Header: string;
+  accessor: string | number | JSX.Element;
 }

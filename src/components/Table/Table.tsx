@@ -1,10 +1,15 @@
 import { useTable } from "react-table";
+import { IColumns } from "../../models/ColumnsModel";
 import { LedgerModel } from "../../models/LedgerModel";
+interface exampleCol {
+  accessor: "edit";
+}
+
 export const Table = ({
   columns,
   data,
 }: {
-  columns: any[];
+  columns: exampleCol[] | any;
   data: LedgerModel[];
 }) => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
