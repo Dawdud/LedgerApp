@@ -8,10 +8,15 @@ import { format } from "date-fns/esm";
 import { Actions } from "../../components/Table/actions";
 import { source } from "../../config/axios";
 import axios, { Axios } from "axios";
+import { LedgerModel } from "../../models/LedgerModel";
+import { IColumns } from "../../models/ColumnsModel";
 
 export const LedgerView = () => {
   const [state, setstate] = useState<ILedgerTable>({ data: [], columns: [] });
   const [hasError, setHasError] = useState(false);
+  const handleDelete = (data: LedgerModel[], columns: IColumns[]) => {
+    setstate({ data, columns });
+  };
 
   useEffect(() => {
     let unmounted = false;
@@ -29,7 +34,7 @@ export const LedgerView = () => {
             item.invoice_number = item.invoice_number.substring(0, 6);
             console.log(item);
 
-            item.edit = <Actions {...item} />;
+            item.edit = <Actions handleUpdate={this.handleDelete} {...item} />;
             return item;
           });
           setstate({ data: mappedData, columns: tableColumns });
